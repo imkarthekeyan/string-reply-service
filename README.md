@@ -1,4 +1,18 @@
 # String Reply Generator Task
+
+### Server Running: Production (AWS) - Demo
+
+#### API Routes:
+
+| Request Method | Version | URL Endpoint | Description |
+| --- |--- | --- | --- |
+| GET | v1 | URL: [http://string-reply-service.com/reply](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/reply) | Returns the default empty message |
+| GET | v1 | URL: [http://string-reply-service.com/reply/kbzw9ru](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/reply/kbzw9ru) | Returns the passed message |
+| GET | v2 | URL: [http://string-reply-service.com/v2/reply/1-kbzw9ru](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/v2/reply/1-kbzw9ru) | Returns the reversed message |
+| GET | v2 | URL: [http://string-reply-service.com/v2/reply/2-kbzw9ru](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/v2/reply/2-kbzw9ru) | Returns the hashed message |
+| GET | v2 | URL: [http://string-reply-service.com/v2/reply/12-kbzw9ru](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/v2/reply/12-kbzw9ru) | Returns the combined reserved with hashed message |
+| GET | v2 | URL: [http://string-reply-service.com/v2/reply/22-kbzw9ru](http://stringreplyservice-env.eba-ifbyppbv.us-east-2.elasticbeanstalk.com/v2/reply/22-kbzw9ru) | Returns the double hashed message |
+
 Our company has released a beta version of **String Reply Service** and it has been a huge success.
 In the current implementation, the **String Reply Service** takes in an input string (in the format of `[a-z0-9]*`)
 and returns the input in a JSON object.
@@ -53,24 +67,35 @@ GET /v2/reply/22-kbzw9ru
 }
 ```
 
-## What you need to do
-Use the boilerplate given and implement the above requirement.
-Your implementation should consider future requirements, i.e. be able to easily add new rules.
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+### Prerequisites
+* **Java 8+**
 
-Upon completing the task, please feel free to (though not required):
+### Libraries Used
+* **Lombok** to include boilerplate code & reduce redundant lines of code
+* **Junit 5** for Unit test
+* **Spring Boot Actuator** allows us to monitor and interact with the application
 
-- host your code on Github
-- include any readme to explain your setup/environment
-- add/implement anything you think would be beneficial
-
-## Build project
+### Build project
 
 To build the project, simply run
 ```
 ./gradlew build
 ```
 
-## Start project
+### Test project
+
+The Unit Tests are written using [JUnit 5](https://junit.org/junit5/).
+
+
+    # On Linux/MacOS:
+    ./gradlew clean test
+
+    # On Windows:
+    gradlew.bat clean test
+
+### Start project
 
 To start the project, simply run
 ```
